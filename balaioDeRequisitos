@@ -1,0 +1,43 @@
+
+
+
+
+
+Requisitos funcionais:
+- Contar os pontos para dois times (placar, ué)
+- Ter um botão pra +1
+- Permitir nome para os times
+- Ter um botão para reiniciar a partida (com confirmação)
+- Avisar fim da partida por placar 
+- Configurar placar para fim da partida
+- Inverter lados com um botão
+- Ter um botão para diminuir/desfazer
+
+
+
+Funcionais desejáveis:
+- Avisar fim da partida por tempo
+- Configurar tempo de partida
+- Ter um botão pra +x
+- Histórico de partidas
+- Lâmpadas extras para registrar eventos/faltas/cartões(...) com quantidade configurável 
+- Comandos por leitura de teclas e atalhos de teclado
+- Rádio da vantagem/saque
+- Melhor de x
+- Modo campeonato
+
+
+
+Requisitos não funcionais e de interface e firulinhas:
+- Skins/temas: dark, light, pink...
+- Festinha no fim da partida (específica por tema/skin -- modo pink tem uma boneca comemorando, modo dark tem um ceifeiro passando a foice no perdedor, modo light aparece uma dança do fortnite)
+- Subir e descer pontos pelo número do placar
+- Definição de cor para nome e placar (não sei se livre ou amarrado à skin)
+- LocalStorage armazenar preferências do usuário
+- Checkbox para animação da vitória (habilitar/desabilitar) - Mais pra uma opção do menu
+- Fim por tempo e placar pode ter um checkbox pra cada pra ativar
+- Avatar para cada player, com cabelo, camiseta, pele ou de uma galeria para escolher avatar e/ou bandeira
+
+Balaio:
+- Ad Sense
+- Premium?! Quais features? Como?
