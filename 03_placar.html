@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="02_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar</title>
+ 
+    
+</head>
+
+<body class="body">
+    <div class="divMenu">
+        <div class="botaoMenu">
+            <button class="menu"><img src="configuracoes.png" alt=""></button>
+        </div>
+    </div>
+    <section>
+        <div class="divTotal">
+            <div class="botoesEsquerda">
+                <div id="nomeEsquerda">
+                    <button type="button" id="botaoNomeEsquerda" onclick="mudarNomeEsquerda()">Nome 1</button>
+                </div>
+                <div class="esquerda">
+                    <div class="divBotao">
+                        <button type="button" onclick="maisUmEsquerda()">+1</button>
+                    </div>    
+                    <div id="numeroEsquerda" class="numeros">0</div>
+                    <div class="divBotao"> 
+                        <button type="button" onclick="menosUmEsquerda()">-1</button>
+                    </div>
+                </div>
+            </div>
+            <div class="botoesMeio">
+                <div class="divBotao">
+                    <button onclick="reset()">Reset</button>
+                </div>                
+                <div class="divBotao">
+                    <button onclick="mudarLados()">←→</button>
+                </div>
+                <div class="meio">
+                    <div id="xDoMeio" class="numeros">x</div>
+                </div>                
+                <div class="divBotao">
+                    <button type="button" onclick="zerarPlacar()">Zerar</button>
+                </div>                
+            </div>
+            <div class="botoesDireita">
+                <div id="nomeDireita" class="divBotao">
+                    <button type="button" id="botaoNomeDireita" onclick="mudarNomeDireita()">Nome 2</button>
+                </div>
+                <div class="direita">
+                    <div class="divBotao">
+                        <button type="button" onclick="maisUmDireita()">+1</button>
+                    </div>    
+                    <div id="numeroDireita" class="numeros">0</div>                    
+                    <div class="divBotao">
+                        <button type="button" onclick="menosUmDireita()">-1</button>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+        <div class="teste"></div>
+    </section>
+        
+    <script src="02_script.js"></script>
+
+</body>
+
+</html>
