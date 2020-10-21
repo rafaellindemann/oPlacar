@@ -1,20 +1,27 @@
 
 
 Pendências:
-- Cores
-- Números negativos
-- 
+- Cores - já tem radios, falta tratar
+- Entrada triunfal da div do fiasco 
+
+
+V- Números negativos
+V- contar o número de vitórias
+V- setar o número para vitórias - falta ler o input do customizável quando aperta o botão
+
 
 
 Requisitos funcionais:
-- Contar os pontos para dois times (placar, ué)
-- Ter um botão pra +1
-- Permitir nome para os times
-- Ter um botão para reiniciar a partida (com confirmação)
+OK - Contar os pontos para dois times (placar, ué)
+OK - Ter um botão pra +1
+OK - Permitir nome para os times
+OK - Ter um botão para reiniciar a partida (com confirmação)
+OK - Inverter lados com um botão
+OK - Ter um botão para diminuir/desfazer
+
 - Avisar fim da partida por placar 
 - Configurar placar para fim da partida
-- Inverter lados com um botão
-- Ter um botão para diminuir/desfazer
+
 
 
 

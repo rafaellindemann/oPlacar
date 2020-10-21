@@ -6,13 +6,13 @@ body {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-
-    align-items:center;
-    justify-content:center;
-
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100%;
 }
+
+
 /*///////////////// DIVS ///////////////////////*/
 
 button {
@@ -20,44 +20,65 @@ button {
     border-color: black;
     border-radius: 5px;
 }
-.divMenu {
-    top:0px;
-    right:0px;
+
+.divBotaoMenu {
+    top: 0px;
+    right: 0px;
     position: absolute;
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
-    background-color: white ;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
     text-align: center;
+    background-color: lightcyan;
+    
+
 }
 
+.toggleMenuEsquerda {
+    margin-left: 0px !important;
+}
 
-.menu {
+.divMenu {
     margin: auto;
     background: transparent;
     cursor: pointer;
     border: none;
     right: 0px;
     top: 0px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
 }
+.divMenuLateral {
+    margin-left: -5000px;
+    transition : margin-left 1s;
+    overflow: auto;
+}
+
+/* Leo parou aqui, arrumar posiçao, botao ainda ta meio paia */
 
 .divTotal {
     display: flex;
     align-items: center;
 }
 
-.botoesEsquerda, .botoesMeio, .botoesDireita, .numeros {
+.botoesEsquerda,
+.botoesMeio,
+.botoesDireita,
+.numeros {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
     vertical-align: middle;
 }
-.numeros {
-    font-size: 120pt; 
-    font-family: 'Courier New', Courier, monospace;  
-    margin: -20px;
 
+.numeros {
+    font-size: 120pt;
+    font-family: 'Courier New', Courier, monospace;
+    margin: -20px;
 }
 
 section {
@@ -70,13 +91,17 @@ section {
     display: -webkit-flex; */
     display: flex;
     justify-content: center;
-    padding:24px;
-    align-items:center;
+    padding: 24px;
+    align-items: center;
+    
+    /* deixa sempre no meio */
+    /* position: fixed; */
 }
 
 #xDoMeio {
     margin-bottom: 0;
 }
+
 .meio {
     border: solid;
     width: 100px;
@@ -84,24 +109,37 @@ section {
     border-radius: 10px;
     margin-left: 50px;
     margin-right: 50px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.esquerda, .direita {
+
+.esquerda,
+.direita {
     border: solid;
     width: 200px;
     height: 210px;
     border-radius: 10px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .divBotao {
     z-index: 0;
 }
 
+input[type=radio] {
+    display: block;
+}
+
+.testeMenu {
+    float: left;
+}
+
+/* #caixaPontuacao {
+    display: flex; align-items: center;
+    justify-content: center;
+}  */

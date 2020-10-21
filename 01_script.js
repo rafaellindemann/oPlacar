@@ -1,3 +1,18 @@
+
+var inteiro, real = 2.1
+
+inteiro = parseInt(real)
+
+
+function calculaMedia(n1, n2)
+{
+    var media = (n1+n2)/2
+    return media
+}
+
+mediaCalculada = calculaMedia(6, 10)
+alert(mediaCalculada)
+
 ///////////////////// Variáveis Globais /////////////////////
 var placarEsquerda=0, placarDireita=0
 // var nome1="Clique para adicionar um nome"
