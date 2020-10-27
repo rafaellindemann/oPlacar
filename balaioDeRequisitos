@@ -1,10 +1,21 @@
-
+- TRANSFORMAR SCSS EM css
+node-sass style.scss style.css
 
 Pendências:
-- Cores - já tem radios, falta tratar
+- css nos botões do painel !important
 - Entrada triunfal da div do fiasco 
+- modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
+- revitalização da div do menu
+- Criar os outros temas
+- será?!: Lâmpadas do ladinho (botão ou checkbox csszado?!)
+- viagem: input file pra subir background image
+- viagem: testar os odômetros no painel
 
 
+pendencias não mais pendentes
+V- USAR RADIOS DECENTES
+V - Cores - já tem radios, falta tratar
+V - Paramos no posicionamento da div menu no meio da tela. Aparentemente tá ok. 
 V- Números negativos
 V- contar o número de vitórias
 V- setar o número para vitórias - falta ler o input do customizável quando aperta o botão
@@ -18,10 +29,8 @@ OK - Permitir nome para os times
 OK - Ter um botão para reiniciar a partida (com confirmação)
 OK - Inverter lados com um botão
 OK - Ter um botão para diminuir/desfazer
-
-- Avisar fim da partida por placar 
-- Configurar placar para fim da partida
-
+OK - Avisar fim da partida por placar 
+OK - Configurar placar para fim da partida
 
 
 
@@ -35,7 +44,6 @@ Funcionais desejáveis:
 - Rádio da vantagem/saque
 - Melhor de x
 - Modo campeonato
-
 
 
 Requisitos não funcionais e de interface e firulinhas:

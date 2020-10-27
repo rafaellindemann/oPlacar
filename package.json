@@ -1,0 +1,19 @@
+{
+  "name": "placar",
+  "version": "1.0.0",
+  "description": "O melhor placar de todos os tempos, e é bom",
+  "main": "05_script.js",
+  "scripts": {
+    "test": "",
+    "scss": "node-sass -watch scss -o css"
+  },
+  "keywords": [
+    "placar",
+    "melhorDoMundo"
+  ],
+  "author": "DESI N2 \u001b[D\u001b[D\u001b[D2020-1 N2",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

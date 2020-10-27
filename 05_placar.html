@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="05_style.css">
+    <link rel="stylesheet" href="style_botoes.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placar</title>
 
@@ -12,23 +13,24 @@
 
 <body id="Body" class="body">
     <!-- Botão -->
-    <div class="divBotaoMenu">
+    <div class="divBotaoMenu" id="divBotaoMenu">
         <div class="botaoMenu">
             <button id="btnMenuLateral" class="btnMenuLateral" onclick="abrirMenu()"><img src="settings_transparent.gif"
                     alt="Menu"></button>
         </div>
     </div>
-
     <!-- Menu de Configurações -->
-    <div id="divMenu" class="divMenuLateral" style="background-color: white; width: 400px; height: 400px;">
-        <div style="position: absolute; top: 5px; right: 10px;"><button>X</button></div>
+    <div id="divMenuLateral" class="divMenuLateral" style="background-color: white; width: 400px; height: 400px;">
+        <div style="position: absolute; top: 5px; right: 10px;">
+            <!-- <button>X</button> -->
+        </div>
         <h2 style="text-align: center;">Menu</h2>
         <div>
             <h3 style="text-align: center;">Temas</h3>
             <div style="display: flex; justify-content: center;">
                 <div style="float: left; margin-left: 7px;">
                     <label class="radio__label">Tema 1
-                        <input type="radio" name="tema" id="tema1" class="radio" onchange="mudarTema()">
+                        <input id="rdoVisual1" type="radio" name="tema" id="tema1" class="radio">
                     </label>
                 </div>
                 <div style="float: left; margin-left: 7px;">
@@ -103,7 +105,7 @@
 
     <div id="divPainelFinalDePartida">
         <button type="button" onclick="zerarPlacar()">XIS</button>
-        <img src="trophy_200_transparent.gif" alt="">
+        <img src="06.gif" alt="deuMerda">
         <!-- tá feio, mas tá bonito -->
         <div id="divMensagemFinalDePartida">
             <!-- Se você venceu, dê uma risadinha :D  -->
