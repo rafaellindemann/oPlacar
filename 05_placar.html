@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="05_style.css">
     <link rel="stylesheet" href="style_botoes.css">
+    <link rel="stylesheet" href="odometer-theme-car.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placar</title>
 
@@ -104,7 +105,7 @@
     </div>
 
     <div id="divPainelFinalDePartida">
-        <button type="button" onclick="zerarPlacar()">XIS</button>
+        <button onclick="zerarPlacar()" class="botaoMaisMenosUm">Fechar</button>
         <img src="06.gif" alt="deuMerda">
         <!-- tá feio, mas tá bonito -->
         <div id="divMensagemFinalDePartida">
@@ -114,17 +115,37 @@
 
     <section>
         <div class="divTotal">
+            <div class="lampadasEsquerda" style="margin-right: 10px;">
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+            </div>
             <div class="botoesEsquerda">
                 <div id="nomeEsquerda">
                     <button type="button" id="botaoNomeEsquerda" onclick="mudarNomeEsquerda()">Nome 1</button>
                 </div>
                 <div class="esquerda">
                     <div class="divBotao">
-                        <button type="button" onclick="maisUmEsquerda()">+1</button>
+                        <button type="button" class="botaoMaisMenosUm" onclick="maisUmEsquerda()" id="button">+1</button>
                     </div>
-                    <div id="numeroEsquerda" class="numeros">0</div>
+                    <div id="numeroEsquerda" class="odometer">0</div>
                     <div class="divBotao">
-                        <button type="button" onclick="menosUmEsquerda()">-1</button>
+                        <button type="button" class="botaoMaisMenosUm" onclick="menosUmEsquerda()" id="button">-1</button>
                     </div>
                 </div>
                 <div id="vitoriasEsquerda">
@@ -133,16 +154,16 @@
             </div>
             <div class="botoesMeio">
                 <div class="divBotao">
-                    <button onclick="reset()">Reset</button>
+                    <button onclick="reset()" id="buttonMeio">Reset</button>
                 </div>
                 <div class="divBotao">
-                    <button onclick="mudarLados()">←→</button>
+                    <button onclick="mudarLados()" id="buttonMeio">←→</button>
                 </div>
                 <div class="meio">
                     <div id="xDoMeio" class="numeros">x</div>
                 </div>
                 <div class="divBotao">
-                    <button type="button" onclick="zerarPlacar()">Zerar</button>
+                    <button type="button" onclick="zerarPlacar()" id="buttonMeio">Zerar</button>
                 </div>
             </div>
             <div class="botoesDireita">
@@ -151,21 +172,42 @@
                 </div>
                 <div class="direita">
                     <div class="divBotao">
-                        <button type="button" onclick="maisUmDireita()">+1</button>
+                        <button type="button" class="botaoMaisMenosUm" onclick="maisUmDireita()" id="button">+1</button>
                     </div>
-                    <div id="numeroDireita" class="numeros">0</div>
+                    <div id="numeroDireita" class="odometer">0</div>
                     <div class="divBotao">
-                        <button type="button" onclick="menosUmDireita()">-1</button>
+                        <button type="button" class="botaoMaisMenosUm" onclick="menosUmDireita()" id="button">-1</button>
                     </div>
                 </div>
                 <div id="vitoriasDireita">
                     0
                 </div>
             </div>
+            <div class="lampadasDireita" style="margin-left: 10px;">
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                </div>
+            </div>
         </div>
     </section>
 
     <script src="05_script.js"></script>
+    <script src="odometer.js"></script>
 
 </body>
 

@@ -1,16 +1,23 @@
+temp link de botoes em CSS
+https://codepen.io/themzed/pen/pXgYzJ
+https://codepen.io/mandycodestoo/pen/QJYJrm
+
+
+
 - TRANSFORMAR SCSS EM css
 node-sass style.scss style.css
 
 Pendências:
-- css nos botões do painel !important
-- Entrada triunfal da div do fiasco 
+ok/2 - css nos botões do painel !important - validar Cores
+- Entrada triunfal da div do fiasco - validar cores e tentar entrada deslizantezinha
 - modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
 - revitalização da div do menu
 - Criar os outros temas
-- será?!: Lâmpadas do ladinho (botão ou checkbox csszado?!)
+ok - será?!: Lâmpadas do ladinho (botão ou checkbox csszado?!)
 - viagem: input file pra subir background image
-- viagem: testar os odômetros no painel
-
+OK viagem: testar os odômetros no painel
+- definição das Lâmpadas
+- treinamento de github desktop com o schmidt :D
 
 pendencias não mais pendentes
 V- USAR RADIOS DECENTES

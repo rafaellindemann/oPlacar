@@ -22,6 +22,9 @@ var Body = document.getElementById("Body")
 var clique_Radio = document.getElementById("rdoVisual1")
 
 clique_Menu.onclick = function (e) { // isso abre o menuLateral
+    
+    console.log(MenuLateral) // *** debug
+
     e.preventDefault();
     if (menuAMostra == false){
     MenuLateral.classList.toggle('toggleMenuEsquerda');
@@ -130,10 +133,12 @@ function verificaGanhador() {
         // divPainelFinalDePartida entra num cavalo branco
         vitoriaDireita++
         mensagemFinalDePartida.innerHTML = `${nomeDireita} VENCEU!`;
+        painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
     } else if (placarEsquerda == pontuacaoFimDoJogo) {
         // divPainelFinalDePartida entra num cavalo branco
         vitoriaEsquerda++
         mensagemFinalDePartida.innerHTML = `${nomeEsquerda} VENCEU!`;
+        painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
     } else if (placarDireita > pontuacaoFimDoJogo || placarEsquerda > pontuacaoFimDoJogo) {
         zerarPlacar();
     }
@@ -187,6 +192,7 @@ function zerarPlacar() {
 
     atualizaPlacar()
     mensagemFinalDePartida.innerHTML = ''
+    painelFinalDePartida.style.display="none"
 }
 
 function mudarNomeEsquerda() {

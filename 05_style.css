@@ -1,4 +1,3 @@
-
 /* position: absolute
 left: calc(100% - 200)
 pra posicionar o brinquedinho no meio da página */
@@ -80,7 +79,8 @@ button {
     width: fit-content;
     height: fit-content;
     text-align: center;
-    background-color: rgb(27, 226, 226);
+    /* background-color: rgb(27, 226, 226); */
+    background-color: rgb(91, 94, 94);
     
 }
 
@@ -89,6 +89,7 @@ button {
     margin: 0 auto !important;
     width: 50% !important;
     z-index: 10;
+    position: absolute; top: 5px; right: 10px;
 }
 
 .btnMenuLateral {
@@ -223,13 +224,31 @@ input[type=radio] {
     font-size: 18pt;
 }
 
+.botaoMaisMenosUm {
+
+    width: 40px;
+    height: 30px;
+    /* background: #ece4e4; */
+    background: #060409;
+    position: relative;
+    /* background: #f3f0f1; */
+    border-radius: 9px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .botaoMaisMenosUm:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+
 #divPainelFinalDePartida{
-    margin-bottom: -5000px;
+    /* margin-bottom: -5000px; */
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background: #0e3c04;
+    height: 500px auto;
 }
-/* #caixaPontuacao {
-    display: flex; align-items: center;
-    justify-content: center;
-}  */
-
-
-/* TESTE DOS BOTOES */
