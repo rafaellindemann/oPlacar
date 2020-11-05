@@ -110,3 +110,8 @@
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-train-station .odometer-digit .odometer-digit-inner {
   left: 0.15em;
 }
+
+/* .odometer-formatting-mark  */
+.odometer-negation-mark{
+  font-size: 60px;
+}

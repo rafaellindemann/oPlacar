@@ -2,22 +2,26 @@ temp link de botoes em CSS
 https://codepen.io/themzed/pen/pXgYzJ
 https://codepen.io/mandycodestoo/pen/QJYJrm
 
+https://codepen.io/ma_suwa/pen/QWWqJBK
+https://beautifier.io/
+
+
 
 
 - TRANSFORMAR SCSS EM css
 node-sass style.scss style.css
 
 Pendências:
+- desenhar o plano de fundo pink pra pumzinha
 ok/2 - css nos botões do painel !important - validar Cores
 - Entrada triunfal da div do fiasco - validar cores e tentar entrada deslizantezinha
 - modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
 - revitalização da div do menu
 - Criar os outros temas
 ok - será?!: Lâmpadas do ladinho (botão ou checkbox csszado?!)
-- viagem: input file pra subir background image
 OK viagem: testar os odômetros no painel
-- definição das Lâmpadas
 - treinamento de github desktop com o schmidt :D
+- viagem: input file pra subir background image
 
 pendencias não mais pendentes
 V- USAR RADIOS DECENTES
@@ -45,7 +49,7 @@ Funcionais desejáveis:
 - Avisar fim da partida por tempo
 - Configurar tempo de partida
 - Ter um botão pra +x
-- Histórico de partidas
+OK- Histórico de partidas
 - Lâmpadas extras para registrar eventos/faltas/cartões(...) com quantidade configurável 
 - Comandos por leitura de teclas e atalhos de teclado
 - Rádio da vantagem/saque
