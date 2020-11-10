@@ -6,7 +6,9 @@ var menuAMostra = false
 var nomeEsquerda = document.getElementById("botaoNomeEsquerda").textContent
 var nomeDireita = document.getElementById("botaoNomeDireita").textContent
 var permitidoNegativo = true
-var pontuacaoFimDoJogo = 500
+var pontuacaoFimDoJogo = 5
+
+
 
 // console.log(window)
 /////////////////////////////////////////////////////////////
@@ -51,23 +53,24 @@ function mudarTema() {
     // alert(tema[temaEscolhido].value)
 
     if (tema[temaEscolhido] == tema1) {
-        alert("Você escolheu o primeiro tema")
-        Body.setAttribute("class", "Visual1")
+        // alert("Você escolheu o primeiro tema")
+        Body.setAttribute("class", "body")
         // Body.classList.toggle('Visual1');
     }
     if (tema[temaEscolhido] == tema2) {
-        alert("Você escolheu o segundo tema")
-        Body.setAttribute("class", "Visual2")
+        // alert("Você escolheu o segundo tema")
+        Body.setAttribute("class", "Visual1")
         // Body.classList.toggle('Visual2');
     }
     if (tema[temaEscolhido] == tema3) {
-        alert("Você escolheu o terceiro tema")
-        Body.setAttribute("class", "body")
+        // alert("Você escolheu o terceiro tema")
+        Body.setAttribute("class", "Visual2")
         // Body.classList.toggle('Aparencia3');
     }
     if (tema[temaEscolhido] == tema4) {
-        alert("Você escolheu o quarto tema")
-        Body.classList.toggle('Aparencia4');
+        // alert("Você escolheu o quarto tema")
+        Body.setAttribute("class", "Aparencia3")
+        // Body.classList.toggle('Aparencia4');
     }
     
 }
@@ -129,12 +132,11 @@ function pontuarNegativo() {
     atualizaPlacar()
 }
 
-function teste() {
-    alert("oi")
-}
-
 function escolherPontuacao() {
     var radioEscolhido = document.getElementsByName('pontuacao')
+    var confirmar
+    var autoriza = 1
+
     for (var i = 0; i < 6; i++) {
         if (radioEscolhido[i].checked) {
             // alert('teste ' + i)
@@ -144,31 +146,90 @@ function escolherPontuacao() {
 
     switch (fimChecado) {
         case 0: document.getElementById('caixaPontuacao').style = 'display: none;'
-            pontuacaoFimDoJogo = 3
+            confirmar = 3
+            confirmarPlacar()
+            if (autoriza == 1) {
+                pontuacaoFimDoJogo = 3
+            }
             break
         case 1: document.getElementById('caixaPontuacao').style = 'display: none;'
+            confirmar = 5
+            confirmarPlacar()
+            if (autoriza == 1) {
             pontuacaoFimDoJogo = 5
+            }
             break
         case 2: document.getElementById('caixaPontuacao').style = 'display: none;'
+            confirmar = 7
+            confirmarPlacar()
+            if (autoriza == 1) {
             pontuacaoFimDoJogo = 7
+            }
             break
         case 3: document.getElementById('caixaPontuacao').style = 'display: none;'
+            confirmar = 10
+            confirmarPlacar()
+            if (autoriza == 1) {
             pontuacaoFimDoJogo = 10
+            }
             break
         case 4: document.getElementById('caixaPontuacao').style = 'display: none;'
+            confirmar = Infinity
+            confirmarPlacar()
+            if (autoriza == 1) {
             pontuacaoFimDoJogo = Infinity
+            }
             break
         case 5: document.getElementById('caixaPontuacao').style = 'display: block; margin-left: 7px; float: left; margin-top: 5px;'
             break
     }
+
+    function confirmarPlacar() {
+        if (confirmar <= placarEsquerda || confirmar <= placarDireita) {
+            confirmar = confirm("O placar atual está maior que a opção escolhida. Tem certeza que deseja alterar a pontuação?\n\nAo confirmar, o placar será reiniciado.")
+        }
+
+        if (confirmar == true) {
+            placarEsquerda = 0
+            placarDireita = 0
+            atualizaPlacar()
+        } else if (confirmar == false) {
+            autoriza = 0
+
+            switch(pontuacaoFimDoJogo)
+            {
+                case 3: document.getElementById('pontuacao3').checked = true
+                    break
+                case 5: document.getElementById('pontuacao5').checked = true
+                    break
+                case 7: document.getElementById('pontuacao7').checked = true
+                    break
+                case 10: document.getElementById('pontuacao10').checked = true
+                    break
+                case Infinity: document.getElementById('pontuacaoInfinito').checked = true
+                    break
+                default:  document.getElementById('pontuacaoOutros').checked = true
+            }
+        }
+        }
+        
 }
 
 function salvarPontuacao() { 
     if (document.getElementById('outraPontuacao').value <= 0 && document.getElementById('pontoNegativo').checked) {
         alert('Por favor, digite uma pontuação válida.')
     } else {
-        alert('Pontuação salva com sucesso.')
-        pontuacaoFimDoJogo = document.getElementById('outraPontuacao').value
+        if (document.getElementById('outraPontuacao').value < placarEsquerda || document.getElementById('outraPontuacao').value < placarDireita) {
+            if (confirm('A pontuação escolhida é menor que o atual placar. \nCaso confirme, o placar será zerado. Deseja continuar?')) {
+                pontuacaoFimDoJogo = document.getElementById('outraPontuacao').value
+                zerarPlacar()
+            } else {
+                document.getElementById('outraPontuacao').value = pontuacaoFimDoJogo
+            }
+        } else {
+            alert('Pontuação salva com sucesso.')
+            pontuacaoFimDoJogo = document.getElementById('outraPontuacao').value
+        }
     }
     
 }
@@ -178,21 +239,36 @@ function salvarPontuacao() {
 
 function verificaGanhador() {
     if (placarDireita == pontuacaoFimDoJogo) {
+
         // divPainelFinalDePartida entra num cavalo branco
         vitoriaDireita++
         mensagemFinalDePartida.innerHTML = `${nomeDireita} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
+        
+        document.getElementById('botaoTeste').focus()
+        
+        for (var i = 0; i < 5; i++) {
+            document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
+        }
     } else if (placarEsquerda == pontuacaoFimDoJogo) {
         // divPainelFinalDePartida entra num cavalo branco
         vitoriaEsquerda++
         mensagemFinalDePartida.innerHTML = `${nomeEsquerda} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
+
+        document.getElementById('botaoTeste').focus()
+
+        for (var i = 0; i < 5; i++) {
+            document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
+        }
     } else if (placarDireita > pontuacaoFimDoJogo || placarEsquerda > pontuacaoFimDoJogo) {
+        
         zerarPlacar();
     }
 }
 
 function maisUmEsquerda() {
+    
     if(placarEsquerda < 10) {
         placarEsquerda++
         atualizaPlacar()
@@ -253,13 +329,29 @@ function mudarLados() {
 function zerarPlacar() {
 
     // console.log(painelFinalDePartida.) // *** teste pra achar o z
-    if(confirm('Tem certeza')) {
+    if (placarDireita == pontuacaoFimDoJogo || placarEsquerda == pontuacaoFimDoJogo) {
+        placarEsquerda = 0
+        placarDireita = 0
+        
+        atualizaPlacar()
+        mensagemFinalDePartida.innerHTML = ''
+        painelFinalDePartida.style.display="none"
+
+        for (var i = 0; i < 5; i++) {
+            document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = false
+        }
+        
+    } else if (confirm('Tem certeza que você quer zerar o placar?')) {
         placarEsquerda = 0
         placarDireita = 0
     
         atualizaPlacar()
         mensagemFinalDePartida.innerHTML = ''
         painelFinalDePartida.style.display="none"
+
+        for (var i = 0; i < 5; i++) {
+            document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = false
+        }
     }
 }
 
@@ -354,5 +446,26 @@ html.onclick = function (event) {
 }
 
 
+function lerTeclas(evento)
+{
+    ////////// TECLAS DO TECLADO //////////
+    var teclaEsquerda = 37
+    var teclaDireita = 39
+    var tecla1 = 49
+    var tecla2 = 50
+    var teclaW = 87
+    var teclaS = 83
+    var teclaCima = 38
+    var teclaBaixo = 40
+    
+    ////////// TECLAS DO TECLADO //////////
+    // alert(evento.keyCode)
+    console.log(evento)
+    if(evento.keyCode == teclaW || evento.keyCode == teclaEsquerda) maisUmEsquerda()
+    if(evento.keyCode == tecla2 || evento.keyCode == teclaDireita) maisUmDireita()
 
-// 
+}
+
+document.onkeydown = lerTeclas
+
+

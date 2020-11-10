@@ -160,6 +160,8 @@ body {
   flex-direction: column;
   background: #f3f0f1;
 }
+
+
 body #botaoNomeEsquerda, #botaoNomeDireita {
   width: auto;
   height: 30px;
