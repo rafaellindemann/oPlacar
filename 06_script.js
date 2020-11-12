@@ -3,14 +3,76 @@
 ///////////////////// Variáveis Globais /////////////////////
 var placarEsquerda = 0, placarDireita = 0, vitoriaEsquerda = 0, vitoriaDireita = 0
 var menuAMostra = false
-var nomeEsquerda = document.getElementById("botaoNomeEsquerda").textContent
-var nomeDireita = document.getElementById("botaoNomeDireita").textContent
-var permitidoNegativo = true
-var pontuacaoFimDoJogo = 5
+var confirmar
 
 
+/////////////////////// LEITURA DA LOCALSTORAGE /////////////
+var nomeEsquerda = localStorage.getItem('NOMEESQUERDA')
+if(nomeEsquerda == undefined) nomeEsquerda = 'Time 1'
+document.getElementById("botaoNomeEsquerda").textContent = nomeEsquerda
 
-// console.log(window)
+var nomeDireita = localStorage.getItem('NOMEDIREITA')
+if(nomeDireita == undefined) nomeDireita = 'Time 2'
+document.getElementById("botaoNomeDireita").textContent = nomeDireita
+
+
+var permitidoNegativo = localStorage.getItem('NEGATIVO')
+if(permitidoNegativo == 'false') // buscou o texto 'false' da localStorage...
+{
+    permitidoNegativo == false
+    document.getElementById('pontoNegativo').checked = false
+}else // buscou 'true' ou pegou undefined por não ter nada salvo (true é o valor inicial da variável)...
+{
+    permitidoNegativo = true
+    // CHECKAR O CHECKBOX
+    document.getElementById('pontoNegativo').checked = true
+}
+
+
+var pontuacaoFimDoJogo = localStorage.getItem('FIMDEJOGO')
+if(pontuacaoFimDoJogo != undefined)
+{
+    pontuacaoFimDoJogo = Number(pontuacaoFimDoJogo)
+    // checkar o radio
+    if(pontuacaoFimDoJogo == 3)
+    {
+        document.getElementById('pontuacao3').checked = true
+    }else if(pontuacaoFimDoJogo == 5)
+    {
+        document.getElementById('pontuacao5').checked = true
+    }else if(pontuacaoFimDoJogo == 7)
+    {
+        document.getElementById('pontuacao7').checked = true
+    }else if(pontuacaoFimDoJogo == 10)
+    {
+        document.getElementById('pontuacao10').checked = true
+    }else if(pontuacaoFimDoJogo == Infinity)
+    {
+        document.getElementById('pontuacaoInfinito').checked = true
+    }else
+    {
+        document.getElementById('pontuacaoOutros').checked = true
+    }
+}else
+{
+    pontuacaoFimDoJogo = 5 // não existia no LS, inicializa com 5 como padrão
+}
+
+var temaInicial = localStorage.getItem('TEMA')
+if(temaInicial != undefined)
+{
+    if(temaInicial == 'body') document.getElementById('tema1').checked = true
+    if(temaInicial == 'Visual1') document.getElementById('tema2').checked = true
+    if(temaInicial == 'Visual2') document.getElementById('tema3').checked = true
+    if(temaInicial == 'Aparencia3') document.getElementById('tema4').checked = true
+   
+     document.getElementsByTagName('body')[0].classList.value = temaInicial
+}
+
+
+/////////////////////// LEITURA DA LOCALSTORAGE /////////////
+
+
 /////////////////////////////////////////////////////////////
 
 ////////////////////////// Funções do visual //////////////////////////
@@ -20,14 +82,14 @@ var clique_Menu = document.getElementById("btnMenuLateral");
 var Botao = document.getElementById("divBotaoMenu")
 
 var mensagemFinalDePartida = document.getElementById('divMensagemFinalDePartida'); // mensagem de vencedor
-var painelFinalDePartida = document.getElementById('divPainelFinalDePartida') // quadro voador do LeoSilva
+var painelFinalDePartida = document.getElementById('divPainelFinalDePartida'); // quadro voador do LeoSilva
 
 var Body = document.getElementById("Body")
 var clique_Radio = document.getElementById("rdoVisual1")
 
 clique_Menu.onclick = function (e) { // isso abre o menuLateral
     
-    console.log(MenuLateral) // *** debug
+    // console.log(MenuLateral) // *** debug
 
     e.preventDefault();
     if (menuAMostra == false){
@@ -42,7 +104,7 @@ clique_Menu.onclick = function (e) { // isso abre o menuLateral
 function mudarTema() {
     var temaEscolhido = 0
     tema = document.getElementsByName("tema")
-    console.log(tema)
+    // console.log(tema)
 
     for (i = 0; i < tema.length; i++) {
         if (tema[i].checked) {
@@ -72,7 +134,7 @@ function mudarTema() {
         Body.setAttribute("class", "Aparencia3")
         // Body.classList.toggle('Aparencia4');
     }
-    
+    salvarPreferencias()
 }
 
 
@@ -130,17 +192,18 @@ function pontuarNegativo() {
     }
 
     atualizaPlacar()
+    salvarPreferencias()
 }
+
 
 function escolherPontuacao() {
     var radioEscolhido = document.getElementsByName('pontuacao')
-    var confirmar
     var autoriza = 1
 
     for (var i = 0; i < 6; i++) {
         if (radioEscolhido[i].checked) {
             // alert('teste ' + i)
-            var fimChecado = i
+            var fimChecado = i              
         }
     }
 
@@ -181,6 +244,7 @@ function escolherPontuacao() {
             }
             break
         case 5: document.getElementById('caixaPontuacao').style = 'display: block; margin-left: 7px; float: left; margin-top: 5px;'
+                document.getElementById('outraPontuacao').value = pontuacaoFimDoJogo // *** teste para o input aparecer com o valor atual
             break
     }
 
@@ -212,7 +276,7 @@ function escolherPontuacao() {
             }
         }
         }
-        
+  salvarPreferencias()      
 }
 
 function salvarPontuacao() { 
@@ -231,7 +295,7 @@ function salvarPontuacao() {
             pontuacaoFimDoJogo = document.getElementById('outraPontuacao').value
         }
     }
-    
+    salvarPreferencias()
 }
 /////////////////////////////////////////////////////////////
 
@@ -244,7 +308,7 @@ function verificaGanhador() {
         vitoriaDireita++
         mensagemFinalDePartida.innerHTML = `${nomeDireita} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
-        
+
         document.getElementById('botaoTeste').focus()
         
         for (var i = 0; i < 5; i++) {
@@ -324,6 +388,7 @@ function mudarLados() {
     vitoriaEsquerda = temp
 
     atualizaPlacar()
+    salvarPreferencias()
 }
 
 function zerarPlacar() {
@@ -335,11 +400,25 @@ function zerarPlacar() {
         
         atualizaPlacar()
         mensagemFinalDePartida.innerHTML = ''
-        painelFinalDePartida.style.display="none"
+        painelFinalDePartida.style.display = "none"
+
+        ocultar()
 
         for (var i = 0; i < 5; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = false
         }
+        
+    } else if (confirmar) {
+        placarEsquerda = 0
+        placarDireita = 0
+    
+        atualizaPlacar()
+        mensagemFinalDePartida.innerHTML = ''
+        painelFinalDePartida.style.display = "none"
+
+        for (var i = 0; i < 5; i++) {
+            document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = false
+        } 
         
     } else if (confirm('Tem certeza que você quer zerar o placar?')) {
         placarEsquerda = 0
@@ -360,6 +439,7 @@ function mudarNomeEsquerda() {
     if (nomeEsquerda != null && nomeEsquerda.length > 0) {
         document.getElementById("botaoNomeEsquerda").textContent = nomeEsquerda
         atualizaPlacar()
+        salvarPreferencias()
     }
 }
 
@@ -367,6 +447,8 @@ function mudarNomeDireita() {
     nomeDireita = prompt("Digite seu nome:")
     if (nomeDireita != null && nomeDireita.length > 0) {
         document.getElementById("botaoNomeDireita").textContent = nomeDireita
+
+        salvarPreferencias()
     }
 }
 
@@ -404,43 +486,18 @@ var menu = document.getElementById('divMenuLateral')
 var html = document.body.parentNode
 
 html.onclick = function (event) {
-    // event.preventDefault();
-//     console.log("o nosso composed")
-// console.log(event.composedPath())
-// console.log("o nosso path")
-// console.log(event.path)
-//////////////////////////////////////////
-// if (event.path) {
-//     if (event.composedPath) {
-//       console.log("Supports `path` and `composedPath`");
-//     } else {
-//       console.log("Supports `path` but not `composedPath`");
-//     }
-//   } else if (event.composedPath) {
-//     console.log("Supports `composedPath` (but not `path`)");
-//   } else {
-//     console.log("Supports neither `path` nor `composedPath`");
-//   }
-
-//////////////////////////////////////////
-     console.log(event)
-    // console.log(event.path[1].id == "btnMenuLateral")
-    // if(event.path[1].id == "btnMenuLateral") alert('To aqui, porraaaaaaa')
+    //  console.log(event)
     if (menuAMostra == true) {
-        // event.preventDefault();
         if (!menu.contains(event.target) && event.composedPath()[1].id != "btnMenuLateral") {
-            // alert('Clicked in the página')
             menuAMostra = false
-            console.log(menuAMostra)
+            // console.log(menuAMostra)
+
             // *** fechar o menu lateral
             MenuLateral.classList.toggle('toggleMenuEsquerda');
             
             Botao.style = 'display: inline;'
             var meioDaPagina = window.innerWidth/2 - 200
-            // vai!
-            document.getElementById("divMenuLateral").style.margin = `${meioDaPagina}px;`
-            
-            console.log(window)
+            return document.getElementById("divMenuLateral").style.margin = `${meioDaPagina}px;`
         } 
     }
 }
@@ -460,12 +517,39 @@ function lerTeclas(evento)
     
     ////////// TECLAS DO TECLADO //////////
     // alert(evento.keyCode)
-    console.log(evento)
-    if(evento.keyCode == teclaW || evento.keyCode == teclaEsquerda) maisUmEsquerda()
-    if(evento.keyCode == tecla2 || evento.keyCode == teclaDireita) maisUmDireita()
+    // console.log(evento)
+
+    // modo W/S para esquerda e cima/baixo para direita
+    if(evento.keyCode == teclaW) maisUmEsquerda()
+    if(evento.keyCode == teclaS) menosUmEsquerda()
+    if(evento.keyCode == teclaCima) maisUmDireita()
+    if(evento.keyCode == teclaBaixo) menosUmDireita()
+
+    // modo esquerda +1 e direita +1
+    if(evento.keyCode == teclaEsquerda) maisUmEsquerda()
+    if(evento.keyCode == teclaDireita) maisUmDireita()
+
 
 }
 
 document.onkeydown = lerTeclas
 
 
+function salvarPreferencias()
+{
+    var tema = document.getElementsByTagName('body')[0].classList.value // pega o valor da classe que tá setada no body (= tema)
+    //body
+    //Visual1
+    //Visual2
+    //Aparencia3
+
+    localStorage.setItem('TEMA', tema)
+    localStorage.setItem('FIMDEJOGO', pontuacaoFimDoJogo)
+    localStorage.setItem('NEGATIVO' , permitidoNegativo)
+
+    nomeEsquerda = document.getElementById('botaoNomeEsquerda').textContent
+    nomeDireita = document.getElementById('botaoNomeDireita').textContent
+    localStorage.setItem('NOMEESQUERDA', nomeEsquerda)
+    localStorage.setItem('NOMEDIREITA', nomeDireita)
+
+}

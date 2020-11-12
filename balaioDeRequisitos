@@ -12,28 +12,33 @@ https://beautifier.io/
 node-sass style.scss style.css
 
 Pendências:
-- tela da vitória tá escrota
-- desenhar o plano de fundo pink pra pumzinha
+ok- tela da vitória tá escrota
+ok- desenhar o plano de fundo pink pra pumzinha
 ok/2 - css nos botões do painel !important - validar Cores
 - Entrada triunfal da div do fiasco - validar cores e tentar entrada deslizantezinha
-- modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
-- revitalização da div do menu
-- Criar os outros temas
+ok- modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
+ok- revitalização da div do menu
+ok- Criar os outros temas
 ok - será?!: Lâmpadas do ladinho (botão ou checkbox csszado?!)
-OK viagem: testar os odômetros no painel
+OK - viagem: testar os odômetros no painel
 - treinamento de github desktop com o schmidt :D
 - viagem: input file pra subir background image
-** - Dupla confirmação em outras pontuações
+OK - Dupla confirmação em outras pontuações
 - youbotões nos ++ e --
 - GABRIEL: criar botão pra baixo
+ok- LocalStorage armazenar preferências do usuário 
+ok- localStorage: pontuação-outros não tá salvando, as demais salva
+ok- localStorage: salvar também os nomes
+ok- input de outraPontuacao aparecer com o valor atual em .value
+- Leo: Arrumar o menu vitoria com um transition
 
 pendencias não mais pendentes
-V- USAR RADIOS DECENTES
+V - USAR RADIOS DECENTES
 V - Cores - já tem radios, falta tratar
 V - Paramos no posicionamento da div menu no meio da tela. Aparentemente tá ok. 
-V- Números negativos
-V- contar o número de vitórias
-V- setar o número para vitórias - falta ler o input do customizável quando aperta o botão
+V - Números negativos
+V - contar o número de vitórias
+V - setar o número para vitórias - falta ler o input do customizável quando aperta o botão
 
 
 
@@ -53,7 +58,7 @@ Funcionais desejáveis:
 - Avisar fim da partida por tempo
 - Configurar tempo de partida
 - Ter um botão pra +x
-OK- Histórico de partidas
+- Histórico de partidas
 - Lâmpadas extras para registrar eventos/faltas/cartões(...) com quantidade configurável 
 - Comandos por leitura de teclas e atalhos de teclado
 - Rádio da vantagem/saque
@@ -66,7 +71,6 @@ Requisitos não funcionais e de interface e firulinhas:
 - Festinha no fim da partida (específica por tema/skin -- modo pink tem uma boneca comemorando, modo dark tem um ceifeiro passando a foice no perdedor, modo light aparece uma dança do fortnite)
 - Subir e descer pontos pelo número do placar
 - Definição de cor para nome e placar (não sei se livre ou amarrado à skin)
-- LocalStorage armazenar preferências do usuário
 - Checkbox para animação da vitória (habilitar/desabilitar) - Mais pra uma opção do menu
 - Fim por tempo e placar pode ter um checkbox pra cada pra ativar
 - Avatar para cada player, com cabelo, camiseta, pele ou de uma galeria para escolher avatar e/ou bandeira

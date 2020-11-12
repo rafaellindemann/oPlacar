@@ -31,7 +31,7 @@
             <div style="display: flex; justify-content: center;">
                 <div style="float: left; margin-left: 7px;">
                     <label class="radio__label">Tema 1
-                        <input type="radio" name="tema" id="tema1" class="radio" value="tema1" onclick="mudarTema()">
+                        <input type="radio" name="tema" id="tema1" class="radio" value="tema1" onclick="mudarTema()" checked>
                     </label>
                 </div>
                 <div style="float: left; margin-left: 7px;">
@@ -104,9 +104,9 @@
         </div>
     </div>
 
-    <div id="divPainelFinalDePartida">
-        <button onclick="zerarPlacar()" style="position: inherit;top:80%; left: 50%;" id="botaoTeste">Fechar</button>
-        <img src="06.gif" alt="deuMerda">
+    <div class = 'divPainelFinalDePartida' id="divPainelFinalDePartida">
+        <button onclick="zerarPlacar()" id="botaoTeste">Fechar</button>
+        <img src="06.gif" alt="deuMerda" class="testando">
         <!-- tá feio, mas tá bonito -->
         <div id="divMensagemFinalDePartida">
             <!-- Se você venceu, dê uma risadinha :D  -->
