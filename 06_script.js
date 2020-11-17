@@ -311,7 +311,8 @@ function verificaGanhador() {
 
         document.getElementById('botaoTeste').focus()
         
-        for (var i = 0; i < 5; i++) {
+        // console.log(document.getElementsByClassName('botaoMaisMenosUm')) // *** debug
+        for (var i = 0; i < 4; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
         }
     } else if (placarEsquerda == pontuacaoFimDoJogo) {
@@ -402,8 +403,7 @@ function zerarPlacar() {
         mensagemFinalDePartida.innerHTML = ''
         painelFinalDePartida.style.display = "none"
 
-        ocultar()
-
+        
         for (var i = 0; i < 5; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = false
         }

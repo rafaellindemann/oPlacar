@@ -162,7 +162,7 @@ button {
 }
 
 section {
-    width: 712px;
+    width: 800px;
     height: 400px;
     display: -webkit-box;
     display: -moz-box;
@@ -203,7 +203,7 @@ section {
 .esquerda,
 .direita {
     border: solid;
-    width: 200px;
+    width: 250px;
     height: 210px;
     border-radius: 10px;
     display: flex;
@@ -264,11 +264,44 @@ input[type=radio] {
     position: absolute;
     z-index: 10;
     background: #2fff00;
+    background-image: url(victory_background.gif);
     height: 55%;
     width: 50% ;
     text-align: center;
     border-radius: 2px;
 }
+
+#checar {
+        width: 23px;
+        height: 23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 100px;
+        background-color: #fff;
+        border: 2px solid #50040a;
+        box-shadow: 0px 0px 0px 0px #50040a inset;
+        transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+    
+        #checar:checked {
+            content: "";
+            width: 23px;
+            height: 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 100px;
+            background-color: #50040a;
+            border: 2px solid #50040a;
+            box-shadow: 0px 0px 0px 0px #50040a inset;
+            transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+            
+      }
+    
+
 
 /* #buttonMeio{
     font-weight: bold;
