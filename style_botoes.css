@@ -179,9 +179,9 @@ body #button {
   height: 30px;
   /* background: #f3f0f1; */
   position: relative;
-  background: #656262;
+  background: #000000;
   /* margin-bottom: 25px; */
-  border-radius: 32px;
+  /* border-radius: 32px; */
   text-align: center;
   cursor: pointer;
   transition: all 0.1s ease-in-out;

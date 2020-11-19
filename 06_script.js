@@ -1,5 +1,3 @@
-// import 
-
 ///////////////////// Variáveis Globais /////////////////////
 var placarEsquerda = 0, placarDireita = 0, vitoriaEsquerda = 0, vitoriaDireita = 0
 var menuAMostra = false
@@ -88,8 +86,6 @@ var Body = document.getElementById("Body")
 var clique_Radio = document.getElementById("rdoVisual1")
 
 clique_Menu.onclick = function (e) { // isso abre o menuLateral
-    
-    // console.log(MenuLateral) // *** debug
 
     e.preventDefault();
     if (menuAMostra == false){
@@ -97,14 +93,12 @@ clique_Menu.onclick = function (e) { // isso abre o menuLateral
 
     menuAMostra = true
     Botao.style = 'display: none;'
-    // console.log(menuAMostra)
     } 
 }
 
 function mudarTema() {
     var temaEscolhido = 0
     tema = document.getElementsByName("tema")
-    // console.log(tema)
 
     for (i = 0; i < tema.length; i++) {
         if (tema[i].checked) {
@@ -112,71 +106,25 @@ function mudarTema() {
             temaEscolhido = i
         }
     }
-    // alert(tema[temaEscolhido].value)
 
     if (tema[temaEscolhido] == tema1) {
-        // alert("Você escolheu o primeiro tema")
         Body.setAttribute("class", "body")
-        // Body.classList.toggle('Visual1');
     }
     if (tema[temaEscolhido] == tema2) {
-        // alert("Você escolheu o segundo tema")
         Body.setAttribute("class", "Visual1")
-        // Body.classList.toggle('Visual2');
     }
     if (tema[temaEscolhido] == tema3) {
-        // alert("Você escolheu o terceiro tema")
         Body.setAttribute("class", "Visual2")
-        // Body.classList.toggle('Aparencia3');
     }
     if (tema[temaEscolhido] == tema4) {
-        // alert("Você escolheu o quarto tema")
         Body.setAttribute("class", "Aparencia3")
-        // Body.classList.toggle('Aparencia4');
     }
     salvarPreferencias()
 }
 
-
-
-
-// clique_Radio.onchange = function (e) {
-//     var teste = document.getElementsByTagName('input')
-//     for(i=0; i<teste.length; i++)
-//     {
-//         teste[i].style.setProperty('--border-hover', 'blue')
-//     }
-//     e.preventDefault()
-//     Body.classList.toggle('Visual1');
-
-//     // document.getElementsByTagName('body')[0].setAttribute("class", "Visual1");
-//     // alert("é")
-// }
-
 /////////////////////////////////////////////////////////////
 
 ////////////////////////// Funções do Menu Lateral //////////////////////////
-
-// function bla() // alternativa viajenta para a função escolherPontuacao()
-// {
-//     var radioEscolhido = document.getElementsByName('pontuacao')
-//     var presetsFimDeJogo = [3,5,7,10,Infinity]
-//     for (var i = 0; i < 6; i++) {
-//         if (radioEscolhido[i].checked) {
-//             // alert('teste ' + i)
-//             var fimChecado = i
-//         }
-//     }
-
-//     if(fimChecado<5)
-//     {
-//         document.getElementById('caixaPontuacao').style = 'display: none;'
-//         pontuacaoFimDoJogo = presetsFimDeJogo[i]   
-//     }else if(fimChecado == 5)
-//     {
-//         document.getElementById('caixaPontuacao').style = 'display: block; margin-left: 7px; float: left; margin-top: 5px;'
-//     }
-// }
 
 function pontuarNegativo() {
     permitidoNegativo = document.getElementById('pontoNegativo').checked
@@ -202,7 +150,6 @@ function escolherPontuacao() {
 
     for (var i = 0; i < 6; i++) {
         if (radioEscolhido[i].checked) {
-            // alert('teste ' + i)
             var fimChecado = i              
         }
     }
@@ -304,14 +251,12 @@ function salvarPontuacao() {
 function verificaGanhador() {
     if (placarDireita == pontuacaoFimDoJogo) {
 
-        // divPainelFinalDePartida entra num cavalo branco
         vitoriaDireita++
         mensagemFinalDePartida.innerHTML = `${nomeDireita} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
 
         document.getElementById('botaoTeste').focus()
         
-        // console.log(document.getElementsByClassName('botaoMaisMenosUm')) // *** debug
         for (var i = 0; i < 4; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
         }
@@ -340,10 +285,8 @@ function maisUmEsquerda() {
     } else if (placarEsquerda >= 10) {
         document.getElementsByClassName('odometer-digit')[0].style.fontSize = '80px'
         document.getElementsByClassName('odometer-auto-theme')[0].style.fontSize = '80px'
-        // document.getElementsByClassName('odometer odometer-auto-theme')[0].style.fontSize = '50px'
         console.log(document.getElementsByClassName('.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer'))
         console.log(document.getElementsByClassName('odometer'))
-        // document.getElementsByClassName('odometer-theme-train-station').style.fontSize = '80px'
         
         placarEsquerda++
         atualizaPlacar()
@@ -394,7 +337,6 @@ function mudarLados() {
 
 function zerarPlacar() {
 
-    // console.log(painelFinalDePartida.) // *** teste pra achar o z
     if (placarDireita == pontuacaoFimDoJogo || placarEsquerda == pontuacaoFimDoJogo) {
         placarEsquerda = 0
         placarDireita = 0
@@ -468,29 +410,13 @@ function reset() {
     }
 }
 
-function avisaVencedor(vencedor) {
-    // criar a div LeoSilva com a festinha do vencedor e o resultado
-    // zerar a partida?
-}
-
-// function abrirMenu() {
-
-// }
-
-// -- TESTE PARA ESCONDER O MENU CLICANDO FORA --
-
-
-// console.log(menuAMostra)
-// 
 var menu = document.getElementById('divMenuLateral')
 var html = document.body.parentNode
 
 html.onclick = function (event) {
-    //  console.log(event)
     if (menuAMostra == true) {
         if (!menu.contains(event.target) && event.composedPath()[1].id != "btnMenuLateral") {
             menuAMostra = false
-            // console.log(menuAMostra)
 
             // *** fechar o menu lateral
             MenuLateral.classList.toggle('toggleMenuEsquerda');
@@ -516,9 +442,7 @@ function lerTeclas(evento)
     var teclaBaixo = 40
     
     ////////// TECLAS DO TECLADO //////////
-    // alert(evento.keyCode)
-    // console.log(evento)
-
+    
     // modo W/S para esquerda e cima/baixo para direita
     if(evento.keyCode == teclaW) maisUmEsquerda()
     if(evento.keyCode == teclaS) menosUmEsquerda()
