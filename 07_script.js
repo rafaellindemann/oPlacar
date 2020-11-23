@@ -337,7 +337,7 @@ function mudarLados() {
 
 function zerarPlacar() {
 
-    if (placarDireita == pontuacaoFimDoJogo || placarEsquerda == pontuacaoFimDoJogo) {
+    if (placarDireita >= pontuacaoFimDoJogo || placarEsquerda >= pontuacaoFimDoJogo) {
         placarEsquerda = 0
         placarDireita = 0
         
