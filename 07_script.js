@@ -255,7 +255,7 @@ function verificaGanhador() {
         mensagemFinalDePartida.innerHTML = `${nomeDireita} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
 
-        document.getElementById('botaoTeste').focus()
+        // document.getElementById('botaoTeste').focus()
         
         for (var i = 0; i < 4; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
@@ -266,7 +266,7 @@ function verificaGanhador() {
         mensagemFinalDePartida.innerHTML = `${nomeEsquerda} VENCEU!`;
         painelFinalDePartida.style.display = "inline" // *** TESTE de aparição do troféu
 
-        document.getElementById('botaoTeste').focus()
+        // document.getElementById('botaoTeste').focus()
 
         for (var i = 0; i < 5; i++) {
             document.getElementsByClassName('botaoMaisMenosUm')[i].disabled = true
