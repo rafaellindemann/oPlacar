@@ -5,7 +5,7 @@ https://codepen.io/mandycodestoo/pen/QJYJrm
 https://codepen.io/ma_suwa/pen/QWWqJBK
 https://beautifier.io/
 
-**TESTE**
+
 
 
 - TRANSFORMAR SCSS EM css
@@ -41,7 +41,6 @@ ok- LocalStorage armazenar preferências do usuário
 ok- localStorage: pontuação-outros não tá salvando, as demais salva
 ok- localStorage: salvar também os nomes
 ok- input de outraPontuacao aparecer com o valor atual em .value
-- Leo: Arrumar o menu vitoria com um transition
 
 pendencias não mais pendentes
 V - USAR RADIOS DECENTES
