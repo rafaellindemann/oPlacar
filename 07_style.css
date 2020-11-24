@@ -317,10 +317,10 @@ box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 
 
 
-img {
+.imagemBotao, .imageBotao:focus {
     border: 0 none;
     margin: none;
     padding: none;
     outline: none;
-    content: none;
+    -moz-outline-style: none;
 }
