@@ -294,7 +294,7 @@ function maisUmEsquerda() {
 }
 
 function maisUmDireita() {
-    if (placarDireita < 99) {
+    if (placarDireita < 999) { 
         placarDireita++
         atualizaPlacar()
     }
@@ -302,7 +302,7 @@ function maisUmDireita() {
 
 function menosUmEsquerda() {
     if (placarEsquerda > 0 || permitidoNegativo == true) {
-        if (placarEsquerda > -99) {
+        if (placarEsquerda > -999) {
             placarEsquerda--
         }
     }
@@ -311,7 +311,7 @@ function menosUmEsquerda() {
 
 function menosUmDireita() {
     if (placarDireita > 0 || permitidoNegativo == true) {
-        if (placarDireita > -100) {
+        if (placarDireita > -999) {
             placarDireita--
         }
     }

@@ -296,31 +296,26 @@ box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
 }
     
-        #checar:checked {
-            content: "";
-            width: 23px;
-            height: 23px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            border-radius: 100px;
-            background-color: #50040a;
-            border: solid #50040a;
-            box-shadow: 0px 0px 0px 0px #50040a inset;
-            transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
-            
-      }
+#checar:checked {
+    content: "";
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 100px;
+    background-color: #50040a;
+    border: solid #50040a;
+    box-shadow: 0px 0px 0px 0px #50040a inset;
+    transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
     
+}
+    
+.botaoMaisMenosUm {
+    vertical-align: middle;
+}
 
-
-
-
-
-.imagemBotao, .imageBotao:focus {
-    border: 0 none;
-    margin: none;
-    padding: none;
-    outline: none;
-    -moz-outline-style: none;
+body {
+    overflow: auto;
 }
