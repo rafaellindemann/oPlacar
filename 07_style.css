@@ -317,27 +317,10 @@ box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 
 
 
-/* #buttonMeio{
-    font-weight: bold;
-} */
-
-
-/* @keyframes move {
-    from {
-        left: 5%;
-    }
-    to {
-        left: 85%;
-    }
-  } */
-  
-  
-  /* assign animation to ball element */
-  /* .testando {
-    animation: 1s move;
-    width: 10%;
-    
-    position: absolute;
-    top: 100px;
-    left: 5%;
-  } */
+img {
+    border: 0 none;
+    margin: none;
+    padding: none;
+    outline: none;
+    content: none;
+}
