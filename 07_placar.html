@@ -16,8 +16,9 @@
     <!-- Botão -->
     <div class="divBotaoMenu" id="divBotaoMenu">
         <div class="botaoMenu">
-            <button id="btnMenuLateral" class="btnMenuLateral" onclick="abrirMenu()"><img src="settings_transparent.gif"
-                    alt="Menu"></button>
+            <button id="btnMenuLateral" class="btnMenuLateral" onclick="abrirMenu()"><img src="settings_transparent.gif" alt="Menu"></button>
+            <!-- <button class="btnAtivarHelp" id="btnAtivarHelp"><img src="../question-mark-icon.png" alt=""></button> -->
+            
         </div>
     </div>
     <!-- Menu de Configurações -->
@@ -102,6 +103,17 @@
                 </div>
             </div>
         </div>
+        <div>
+            <h3 style="text-align: center;">Configuração de Teclas de Atalho</h3>
+            <div style="display: flex; justify-content: center;">
+                <div>
+                    <input type="text" id="maisEsq" placeholder="Mude a tecla de atalho:">
+                    <label for="maisEsq">Adiciona uma pontuação ao jogador da esquerda.</label><br>
+                    <input type="text" id="menosEsq" placeholder="Mude a tecla de atalho:">
+                    <label for="menosEsq">Adiciona uma pontuação ao jogador da direita.</label>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class = 'divPainelFinalDePartida' id="divPainelFinalDePartida">
@@ -110,6 +122,14 @@
         </div>
         <button onclick="zerarPlacar()" id="btnFechaDivFinalPartida">Fechar</button>
     </div>
+
+    <!-- <div class="divHelpTeclado" id="divHelpTeclado">
+        <img class="imgHelp" src="full_mode.jpg" alt="">
+        <img class="imgHelp" src="simple_mode.jpg" alt="">
+
+    </div> -->
+    
+
 
     <section>
         <div class="divTotal">
@@ -174,7 +194,7 @@
                     </div>
                     <div id="numeroDireita" class="odometer">0</div>
                     <div class="divBotao">
-                        <button type="button" class="botaoMaisMenosUm" onclick="menosUmDireita()" id="button"><img src="arrow_down.png" alt=""></button>
+                        <button type="button" class="botaoMaisMenosUm" onclick="menosUmDireita()" on id="button"><img src="arrow_down.png" alt=""></button>
                     </div>
                 </div>
                 <div id="vitoriasDireita">
@@ -203,6 +223,11 @@
             </div>
         </div>
     </section>
+    
+    <!-- <div id="divAtivarHelp">
+        <button class="btnAtivarHelp" id="btnAtivarHelp">?</button>
+    </div> -->
+
 
     <script src="07_script.js"></script>
     <script src="odometer.js"></script>

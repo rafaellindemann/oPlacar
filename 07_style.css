@@ -90,6 +90,36 @@ button {
     
 }
 
+#divAtivarHelp {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#divAtivarHelp > button {
+    font-size: 25px;
+}
+
+.divHelpTeclado {
+    /* top: 100px;
+    width: fit-content;
+    */background-color: white;
+    z-index: 1000;
+
+}
+
+.imgHelp {
+    width: 600px;
+    height: auto;
+    /* margin: 5px; */
+
+}
+
+/* .btnAtivarHelp {
+    position: absolute;
+    top:0px
+} */
+
 .toggleMenuEsquerda {  
     margin-left: 0px !important;
     margin: 0 auto !important;

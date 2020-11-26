@@ -78,6 +78,7 @@ if(temaInicial != undefined)
 var MenuLateral = document.getElementById("divMenuLateral");
 var clique_Menu = document.getElementById("btnMenuLateral");
 var Botao = document.getElementById("divBotaoMenu")
+var DivHelp = document.getElementById("divHelpTeclado");
 
 var mensagemFinalDePartida = document.getElementById('divMensagemFinalDePartida'); // mensagem de vencedor
 var painelFinalDePartida = document.getElementById('divPainelFinalDePartida'); // quadro voador do LeoSilva
@@ -95,6 +96,7 @@ clique_Menu.onclick = function (e) { // isso abre o menuLateral
     Botao.style = 'display: none;'
     } 
 }
+
 
 function mudarTema() {
     var temaEscolhido = 0
@@ -431,6 +433,7 @@ html.onclick = function (event) {
 
 function lerTeclas(evento)
 {
+    console.log(evento)
     ////////// TECLAS DO TECLADO //////////
     var teclaEsquerda = 37
     var teclaDireita = 39
@@ -444,15 +447,17 @@ function lerTeclas(evento)
     ////////// TECLAS DO TECLADO //////////
     
     // modo W/S para esquerda e cima/baixo para direita
-    if(evento.keyCode == teclaW) maisUmEsquerda()
-    if(evento.keyCode == teclaS) menosUmEsquerda()
-    if(evento.keyCode == teclaCima) maisUmDireita()
-    if(evento.keyCode == teclaBaixo) menosUmDireita()
+    if(document.getElementsByClassName('botaoMaisMenosUm')[0].disabled == false)
+    {
+        if(evento.keyCode == teclaW) maisUmEsquerda()
+        if(evento.keyCode == teclaS) menosUmEsquerda()
+        if(evento.keyCode == teclaCima) maisUmDireita()
+        if(evento.keyCode == teclaBaixo) menosUmDireita()
 
-    // modo esquerda +1 e direita +1
-    if(evento.keyCode == teclaEsquerda) maisUmEsquerda()
-    if(evento.keyCode == teclaDireita) maisUmDireita()
-
+        // modo esquerda +1 e direita +1
+        if(evento.keyCode == teclaEsquerda) maisUmEsquerda()
+        if(evento.keyCode == teclaDireita) maisUmDireita()
+    }
 
 }
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, div{
+            width: 20px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+   
+    <input type="text" id="maisEsq" placeholder="Mude a tecla de atalho"> adiciona uma pontuação ao jogador da esquerda <br>
+   <input type="text" id="menosEsq" placeholder="Mude a tecla de atalho">adiciona uma pontuação ao jogador da direita
+
+   <!-- <div id="confirma"></div> -->
+
+
+    <script>
+
+        var teclaMaisEsquerda='w', teclaMenosEsquerda='s'
+        var confirma = document.getElementById('confirma')
+
+        function configuraMaisEsquerda(e) {
+            e.preventDefault()
+            e.stopPropagation()
+            teclaMaisEsquerda = e.key
+            // alert(`Tecla para subir esquerda configurada como: ${teclaMaisEsquerda}`)
+            // document.getElementById('maisEsq').value = ''
+            // document.getElementById('maisEsq').value = teclaMaisEsquerda
+            confirmaTeclas()
+        }
+        function configuraMenosEsquerda(e) {
+            e.preventDefault()
+            e.stopPropagation()
+            teclaMenosEsquerda = e.key
+            // alert(`Tecla para descer esquerda configurada como: ${teclaMenosEsquerda}`)
+            // document.getElementById('menosEsq').value = teclaMenosEsquerda
+            confirmaTeclas()
+        }
+        // function mudou(e)
+        // {
+        //     // alert("isso é um parâmetro")
+        //     console.log(e.key)
+        //     if(e.key == 'a') teclaMaisEsquerda 
+
+           
+        // }
+
+        function confirmaTeclas()
+        {
+            // confirma.innerHTML = `Sobe esquerda: ${teclaMaisEsquerda}<br>Desce esquerda: ${teclaMenosEsquerda}`
+            document.getElementById('mostraMaisEsquerda').innerHTML = teclaMaisEsquerda
+            document.getElementById('mostraMenosEsquerda').innerHTML = teclaMenosEsquerda
+
+            // document.getElementById('maisEsq').value = ''   //teclaMaisEsquerda
+            // document.getElementById('menosEsq').value = ''  //teclaMenosEsquerda
+            
+            document.getElementById('maisEsq').value = teclaMaisEsquerda
+            document.getElementById('menosEsq').value = teclaMenosEsquerda
+
+        }
+
+        document.getElementById('maisEsq').onkeyup = configuraMaisEsquerda
+        document.getElementById('menosEsq').onkeyup = configuraMenosEsquerda
+
+
+        document.onkeyup = lerTeclas
+        function lerTeclas(e) 
+        {
+            if(e.key == teclaMaisEsquerda)   alert('esq + 1')
+            if(e.key == teclaMenosEsquerda)   alert('esq - 1')
+        }
+
+
+
+
+// function lerTeclas(evento)
+// {
+//     ////////// TECLAS DO TECLADO //////////
+//     var teclaEsquerda = 37
+//     var teclaDireita = 39
+//     var tecla1 = 49
+//     var tecla2 = 50
+//     var teclaW = 87
+//     var teclaS = 83
+//     var teclaCima = 38
+//     var teclaBaixo = 40
+    
+//     ////////// TECLAS DO TECLADO //////////
+    
+//     // modo W/S para esquerda e cima/baixo para direita
+//     if(document.getElementsByClassName('botaoMaisMenosUm')[0].disabled == false)
+//     {
+//         if(evento.keyCode == teclaW) maisUmEsquerda()
+//         if(evento.keyCode == teclaS) menosUmEsquerda()
+//         if(evento.keyCode == teclaCima) maisUmDireita()
+//         if(evento.keyCode == teclaBaixo) menosUmDireita()
+
+//         // modo esquerda +1 e direita +1
+//         if(evento.keyCode == teclaEsquerda) maisUmEsquerda()
+//         if(evento.keyCode == teclaDireita) maisUmDireita()
+//     }
+
+// }
+
+// document.onkeydown = lerTeclas
+
+    </script>
+    
+</body>
+</html>

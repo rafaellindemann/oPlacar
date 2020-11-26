@@ -6,6 +6,10 @@ https://codepen.io/ma_suwa/pen/QWWqJBK
 https://beautifier.io/
 
 
+- implementar o js da seleção de teclas
+- validar repetição de teclas
+- salvar teclas no LocalStorage
+- foda-se, cronômetro.
 
 
 - TRANSFORMAR SCSS EM css
@@ -26,7 +30,7 @@ Pendências:
 ok- tela da vitória tá escrota
 ok- desenhar o plano de fundo pink pra pumzinha
 ok/2 - css nos botões do painel !important - validar Cores
-- Entrada triunfal da div do fiasco - validar cores e tentar entrada deslizantezinha
+ok- Entrada triunfal da div do fiasco - validar cores e tentar entrada deslizantezinha
 ok- modo dark praticamente pronto, faltam pequenos ajustes depois dos passos anteriores
 ok- revitalização da div do menu
 ok- Criar os outros temas
@@ -72,7 +76,7 @@ Funcionais desejáveis:
 ok - Lâmpadas extras para registrar eventos/faltas/cartões(...) com quantidade configurável 
 - Comandos por leitura de teclas e atalhos de teclado
 - Rádio da vantagem/saque
-- Melhor de x
+- Melhor de x+
 - Modo campeonato
 
 
