@@ -6,10 +6,12 @@ https://codepen.io/ma_suwa/pen/QWWqJBK
 https://beautifier.io/
 
 
-- implementar o js da seleção de teclas
-- validar repetição de teclas
-- salvar teclas no LocalStorage
-- foda-se, cronômetro.
+ok- implementar o js da seleção de teclas
+OK- validar repetição de teclas
+ok- salvar teclas no LocalStorage
+- aumentar a div de config
+- css na config de teclas
+
 
 
 - TRANSFORMAR SCSS EM css

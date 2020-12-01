@@ -64,10 +64,12 @@
 
         }
 
+        // configura o evento pra chamar as funções
         document.getElementById('maisEsq').onkeyup = configuraMaisEsquerda
         document.getElementById('menosEsq').onkeyup = configuraMenosEsquerda
 
 
+        // leitura e tratamento normal das teclas
         document.onkeyup = lerTeclas
         function lerTeclas(e) 
         {
