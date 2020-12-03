@@ -105,7 +105,7 @@ function mudarTema() {
 
     for (i = 0; i < tema.length; i++) {
         if (tema[i].checked) {
-            console.log("Escolheu: " + tema[i].value);
+            // console.log("Escolheu: " + tema[i].value);
             temaEscolhido = i
         }
     }
@@ -292,8 +292,8 @@ function maisUmEsquerda() {
     } else if (placarEsquerda >= 10) {
         document.getElementsByClassName('odometer-digit')[0].style.fontSize = '80px'
         document.getElementsByClassName('odometer-auto-theme')[0].style.fontSize = '80px'
-        console.log(document.getElementsByClassName('.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer'))
-        console.log(document.getElementsByClassName('odometer'))
+        // console.log(document.getElementsByClassName('.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer'))
+        // console.log(document.getElementsByClassName('odometer'))
         
         placarEsquerda++
         atualizaPlacar()
@@ -452,7 +452,7 @@ if(teclaMenosDireita == undefined) teclaMenosDireita = 'ArrowDown'
 
 function lerTeclas(evento)
 {
-    console.log(evento)
+    // console.log(evento)
     ////////// TECLAS DO TECLADO //////////
     // para permitir a configuração das teclas pelo usuário, elas foram renomeadas e movidas para o escopo global
 

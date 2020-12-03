@@ -107,15 +107,22 @@
             <h3 style="text-align: center;">Configuração de Teclas de Atalho</h3>
             <div style="display: flex; justify-content: center;">
                 <div>
-                    <input type="text" id="maisEsq" placeholder="Mude a tecla de atalho:" class="inputTeclas">
-                    <label for="maisEsq">Adiciona 1 ponto ao jogador da ESQUERDA.</label><br>
-                    <input type="text" id="menosEsq" placeholder="Mude a tecla de atalho:" class="inputTeclas">
-                    <label for="menosEsq">Dimunui 1 ponto do jogador da ESQUERDA.</label><br>
-
-                    <input type="text" id="maisDir" placeholder="Mude a tecla de atalho:" class="inputTeclas">
-                    <label for="maisDir">Adiciona 1 ponto ao jogador da DIREITA.</label><br>
-                    <input type="text" id="menosDir" placeholder="Mude a tecla de atalho:" class="inputTeclas">
-                    <label for="menosDir">Dimunui 1 ponto do jogador da DIREITA.</label>
+                    <div class="form-group">
+                        <span for="maisEsq">+1 Esquerda</span>
+                        <input type="text" id="maisEsq" placeholder="Mude a tecla de atalho" class="form-field">
+                    </div>
+                    <div class="form-group">
+                        <span for="menosEsq">-1 Esquerda</span>
+                        <input type="text" id="menosEsq" placeholder="Mude a tecla de atalho" class="form-field">
+                    </div>
+                    <div class="form-group">
+                        <span for="maisDir">+1 Direita</span><br>
+                        <input type="text" id="maisDir" placeholder="Mude a tecla de atalho" class="form-field">
+                    </div>
+                    <div class="form-group">
+                        <span for="menosDir">-1 Direita</span>
+                        <input type="text" id="menosDir" placeholder="Mude a tecla de atalho" class="form-field">
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,11 +235,6 @@
             </div>
         </div>
     </section>
-    
-    <!-- <div id="divAtivarHelp">
-        <button class="btnAtivarHelp" id="btnAtivarHelp">?</button>
-    </div> -->
-
 
     <script src="08_script.js"></script>
     <script src="odometer.js"></script>
